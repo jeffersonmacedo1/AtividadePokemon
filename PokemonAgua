@@ -1,0 +1,54 @@
+
+public class PokemonAgua extends Pokemon {
+	private int dano=10;
+
+	public PokemonAgua(String nome, int hp, boolean ehEvolucao) {
+		super(nome, hp, ehEvolucao);
+		
+	}
+	public int calcularDanoExtra() {
+		return dano*5/(100);
+	}
+
+
+	public int CalcularDano(String tipoAdversario) {
+		
+		if (tipoAdversario == "Fogo" && getEvolucao()==true) {
+			return calcularDanoExtra()+dano+(dano*50/100);
+		}
+		
+		else if (tipoAdversario=="Fogo") {
+			return dano+(dano*50/(100));
+		}
+		else if 
+		 (tipoAdversario == "Terra" && getEvolucao()==true) {
+			return calcularDanoExtra()+dano+(dano*20/100);
+		}
+		else if (tipoAdversario=="Terra") {
+			return dano+(dano*20/(100));
+		}
+		
+		else if (getEvolucao()==true) {
+			return calcularDanoExtra()+dano;
+			
+		}
+		else {
+			return dano;
+		}
+	}
+	private boolean getEvolucao() {
+		
+		return false;
+	}
+	
+
+
+	public String getTipo() {
+		
+		return "Agua";
+	}
+
+}
+
+
+

@@ -1,0 +1,44 @@
+
+public class PokemonGrama extends Pokemon {
+
+	private int dano=12;
+
+	public PokemonGrama(String nome, int hp, boolean ehEvolucao) {
+		super(nome, hp, ehEvolucao);
+		
+	}
+	public int calcularDanoExtra() {
+		return dano*5/(100);
+		
+	}
+
+	public int CalcularDano(String tipoAdversario) {
+		
+		if (tipoAdversario == "Agua" && getEvolucao()==true) {
+			return calcularDanoExtra()+dano+(dano*50/(100));
+		}
+		else if (tipoAdversario=="Agua") {
+			return dano+(dano*50/(100));
+		}
+		else if (getEvolucao()==true) {
+			return calcularDanoExtra()+dano;
+			
+		}
+		else {
+			return dano;
+		}
+	}
+
+
+	private boolean getEvolucao() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	public String getTipo() {
+		
+		return "Grama";
+	}
+
+}
+
+

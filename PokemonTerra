@@ -1,0 +1,53 @@
+
+public class PokemonTerra extends Pokemon {
+	private int dano=10;
+
+	public PokemonTerra(String nome, int hp, boolean ehEvolucao) {
+		super(nome, hp, ehEvolucao);
+		
+	}
+	public int calcularDanoExtra() {
+		return dano*3/(100);
+	}
+
+
+	public int CalcularDano(String tipoAdversario) {
+		
+		if (tipoAdversario == "Eletrico" && getEvolucao()==true) {
+			return calcularDanoExtra()+dano+(dano*50/(100));
+		}
+		
+		else if (tipoAdversario=="Eletrico") {
+			return dano+(dano*50/(100));
+		}
+		else if 
+		 (tipoAdversario == "Fogo" && getEvolucao()==true) {
+			return calcularDanoExtra()+dano+(dano*20/(100));
+		}
+		else if (tipoAdversario=="Fogo") {
+			return dano+(dano*20/(100));
+		}
+		
+		else if (getEvolucao()==true) {
+			return calcularDanoExtra()+dano;
+			
+		}
+		else {
+			return dano;
+		}
+	}
+
+	
+	private boolean getEvolucao() {
+		
+		return false;
+	}
+	public String getTipo() {
+	
+		return "Terra";
+	}
+
+}
+
+
+

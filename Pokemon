@@ -1,0 +1,78 @@
+
+public abstract class Pokemon implements Evolucao {
+	protected String nome;
+	private int hp;
+	private boolean ehEvolucao;
+	private static final String Tipo = null;
+	
+
+	
+	public abstract int calcularDanoExtra();
+		
+		
+	
+	public Pokemon(String nome, int hp, boolean ehEvolucao) {
+		super();
+		this.nome = nome;
+		this.hp = hp;
+		this.ehEvolucao = ehEvolucao;
+	}
+
+
+
+	public void setEhEvolucao(boolean ehEvolucao) {
+		this.ehEvolucao = ehEvolucao;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public void setHp(int hp) {
+		this.hp = hp;
+	}
+
+	public void receberAtaque (int dano) {
+		
+		this.hp=this.hp-dano;
+		
+	}
+	public String getDados() {
+		
+	
+		return  "nome"   + getNome() +   "tipo" + getTipo() + "Hp" + getHp(); 
+	}
+
+	public  abstract int   CalcularDano( String tipoAdversario );
+		
+	 public  abstract String getTipo();
+
+
+	public int getHp() {
+		
+		return this.hp;
+	}
+
+	public String getNome() {
+		
+		return nome;
+	}
+
+	
+
+	
+
+	
+	 
+
+
+	
+	
+
+
+	}
+
+	
+
+
+
